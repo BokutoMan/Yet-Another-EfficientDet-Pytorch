@@ -21,12 +21,12 @@ try:
 except ImportError:
     ReduceAddCoalesced = Broadcast = None
 
-try:
-    from jactorch.parallel.comm import SyncMaster
-    from jactorch.parallel.data_parallel import JacDataParallel as DataParallelWithCallback
-except ImportError:
-    from .comm import SyncMaster
-    from .replicate import DataParallelWithCallback
+# try:
+#     from jactorch.parallel.comm import SyncMaster
+#     from jactorch.parallel.data_parallel import JacDataParallel as DataParallelWithCallback
+# except ImportError:
+from .comm import SyncMaster
+from .replicate import DataParallelWithCallback
 
 __all__ = [
     'SynchronizedBatchNorm1d', 'SynchronizedBatchNorm2d', 'SynchronizedBatchNorm3d',
